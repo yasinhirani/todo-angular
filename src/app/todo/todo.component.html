@@ -1,0 +1,28 @@
+<div class="wrapper w-100 h-100 overflow-hidden d-flex flex-column">
+    <header>
+        <div class="bg-primary text-white p-2">
+            <h1 class="mb-0 text-center">ToDo App</h1>
+        </div>
+    </header>
+    <main class="overflow-auto flex-grow-1">
+        <div class="container">
+            <div class="input py-4">
+                <form>
+                    <div class="form-group">
+                        <label for="todoInput">Enter a ToDo:</label>
+                        <input class="form-control" type="text" [(ngModel)]="todoClear" name="todoInput" #todoInput autocomplete="off">
+                    </div>
+                </form>
+                <button class="btn btn-primary" (click)="createTodo(todoInput.value)">Create ToDo</button>
+            </div>
+            <h4 class="mb-2 mt-4" *ngIf="todos.length > 0">ToDos:</h4>
+            <ul class="nav" *ngFor="let todo of todos">
+                <li class="nav-item py-2"><button class="btn btn-transparent text-danger mr-4 p-0" (click)="deleteTodo(todo)"><span class="fa fa-trash font-xl"></span></button>{{todo}}</li>
+            </ul>
+        </div>
+    </main>
+    <footer class="bg-primary text-white py-2">
+        <p class="mb-0 text-center">Made by Yasin</p>
+    </footer>
+</div>
+
