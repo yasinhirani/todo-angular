@@ -1,0 +1,24 @@
+.sidebar{
+    width: 250px;
+    flex: 0 0 250px;
+    transition: all .3s ease-in-out;
+    background-color: white;
+    @include media-breakpoint-down(md){
+        position: absolute;
+        left: -100%;
+        z-index: 99;
+    }
+}
+
+ul{
+    li{
+        a{
+            transition: all .2s ease-in-out;
+            white-space: nowrap;
+            &:hover{
+                background-color: $primary;
+                color: white;
+            }
+        }
+    }
+}
